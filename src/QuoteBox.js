@@ -11,21 +11,27 @@ class QuoteBox extends Component {
 
         return (
             <div style= {{backgroundColor: 'white'}}>
-               <h1>{this.props.quote}</h1>
+               <h1 style= {{ color: this.props.color }} >
+               {this.props.quote}</h1>
                <h4 style={{ color: this.props.color}}>
                    -{this.props.author !== '' ? this.props.author :
                    'Unknown'}-
                </h4>
-               <button>
-                   style={{ backgroundColor:this.props.color}}
-                   
+               <button
+                   style= {{ backgroundColor:this.props.color}}
+                   onClick={this.props.handleClick}
+                   >
+                   New Quote
                </button>
-               <h1>{this.props.author}</h1>
-               <button onClick={this.props.handleClick}>New Quote</button>
-            </div>
+
+               </div>
+             
+          
         );
     }
+
 }
+
 
     
     export default QuoteBox;
