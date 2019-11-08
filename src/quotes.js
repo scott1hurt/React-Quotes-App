@@ -282,6 +282,6 @@ const quotes = [
     "quote": "Life is movement-we breathe, we eat, we walk, we move!",
     "author": "John Pierrakos"
     }
-]
+];
 
 export default quotes; 

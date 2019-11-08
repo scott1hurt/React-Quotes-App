@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './QuoteBox.css';
+
 
 
 class QuoteBox extends Component {
@@ -7,31 +9,27 @@ class QuoteBox extends Component {
         //Set the backgrouind color ofnthe HTML element to the random color that is passed in as a prop
 
         const html = document.documentElement;
-        html.style.backgroundColor = this.props.color;
+        html.style.background = this.props.color;
 
         return (
-            <div style= {{backgroundColor: 'white'}}>
-               <h1 style= {{ color: this.props.color }} >
-               {this.props.quote}</h1>
-               <h4 style={{ color: this.props.color}}>
-                   -{this.props.author !== '' ? this.props.author :
-                   'Unknown'}-
+            <div style={{ backgroundColor: 'blue' }} className='QuoteBox'>
+                <h1 style={{ color: this.props.color }} className="QuoteBox-quote fadeIn">{this.props.quote}</h1>
+                <h4 style={{ color: this.props.color }} className='QuoteBox-author fadeIn'>
+                    -{this.props.author !== '' ? this.props.author : 'Unknown'}-
                </h4>
-               <button
-                   style= {{ backgroundColor:this.props.color}}
-                   onClick={this.props.handleClick}
-                   >
-                   New Quote
-               </button>
+                <button
+                    style={{ backgroundColor: this.props.color }}
+                    onClick={this.props.handleClick}
+                    className='QuoteBox-button'>New Quote</button>
 
-               </div>
-             
-          
+            </div>
+
+
         );
     }
 
 }
 
 
-    
-    export default QuoteBox;
+
+export default QuoteBox;
